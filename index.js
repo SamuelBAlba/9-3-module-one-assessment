@@ -38,8 +38,6 @@ function getAllMovieTitles(movies) {
   return movieTitles
 }
 
-
-
 // start with an empty array and accumulate
 // use for loop
 //return array of strings(all the movie titles)
@@ -55,8 +53,33 @@ function getAllMovieTitles(movies) {
  *  getHighestMetascore(movies);
  *  //> 96
  */
-function getHighestMetascore() {}
+function getHighestMetascore(movies) {
+  let highMeta = 0
+  metaArr = []
 
+  // guard clause
+  if(movies.length === 0){
+    return highMeta
+  }
+    // loop through movies
+  for(let i = 0; i < movies.length; i++){
+   // push metascore into metaArr and turn string into number
+    metaArr.push(Number(movies[i].metascore))
+  }
+  // loop through metaArr
+  for(let j = 0; j < metaArr.length; j++){
+   // searches for highest number in array
+    if(metaArr[j] > highMeta){
+      highMeta = metaArr[j]
+    }
+  }
+  return highMeta
+}
+
+// will start score from 0
+// will need to convert from string to number in order to compare
+// loop will be used to search through movies
+// return will be a number
 /**
  * getAverageIMDBRating()
  * -----------------------------
@@ -68,8 +91,24 @@ function getHighestMetascore() {}
  *  getAverageIMDBRating(movies);
  *  //> 7.76
  */
-function getAverageIMDBRating() {}
+function getAverageIMDBRating(movies) {
+  let noFilms = 0
+  
+  if(movies.length === 0){
+    return noFilms
+  }
 
+  for
+}
+
+
+
+
+
+// converts strings to numbers
+// finds average of number (average = (sum of all number) divided by (amount of number).length?
+// answer needs to be in two decimal form 
+// returns a number
 /**
  * countByRating()
  * -----------------------------

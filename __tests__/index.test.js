@@ -12,7 +12,7 @@ const {
 const movies = require("../movies");
 const alternative = require("./fixtures/alternative-movies");
 
-describe.only("getAllMovieTitles()", () => {
+describe("getAllMovieTitles()", () => {
   test("should return all of the movie titles in an array", () => {
     const actual = getAllMovieTitles(movies);
     const expected = [
@@ -59,7 +59,7 @@ describe("getHighestMetascore()", () => {
   });
 });
 
-describe("getAverageIMDBRating()", () => {
+describe.only("getAverageIMDBRating()", () => {
   test("should return the average IMDB rating across all movies", () => {
     const actual = getAverageIMDBRating(movies);
     const expected = 7.76;
