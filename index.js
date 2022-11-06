@@ -160,27 +160,22 @@ function countByRating(movies) {
  */
 function findById(movies, id) {
   let errorMsg = null 
-  let movieName
-   
+  let finalReturn
+  
+
   if(movies.length === 0){
     return errorMsg
   }
 
-  for(let i = 0; i < movies.length; i++){
-
-    if(movies[i].imdbID !== id){
-      return errorMsg
-    }else{
-      movieName = movies[i].title
-      //console.log(movieName)
+  for( let i = 0; i < movies.length; i++){
+    if(movies[i].imdbID === id){
+      return movies[i]
     }
-    
+
+    return errorMsg
+  }
+   
 }
-
-return movieName
-
-}
-
 // use loop
 // two parameters (movies, id)
 // 2 error messages
@@ -213,19 +208,17 @@ function filterByGenre(movies, genre) {
     return noMovies
   }
 
+  
   for(let i = 0; i < movies.length; i++){
-    
-    movieGenre = movies[i].genre.split(', ')
+   movieGenre = movies[i].genre.split(', ')
+  
+   if(movieGenre.includes(genre)){
+    noMovies.push(movies[i])
+   }
 
-    if(movieGenre.includes(genre)){
-      noMovies.push(movies[i].title)
-    }
-
-    return noMovies
-    
   }
 
-
+  return noMovies
 
 }
 
@@ -258,8 +251,22 @@ function filterByGenre(movies, genre) {
       }
     ];
  */
-function getAllMoviesReleasedAtOrBeforeYear() {}
+function getAllMoviesReleasedAtOrBeforeYear(movies, year) {
+  let moviesYear = []
+  let yearRele
 
+  if(movies.length === 0){
+    return moviesYear
+  }
+
+
+return moviesYear
+
+
+}
+
+//
+// return an array 
 /**
  * getBiggestBoxOfficeMovie()
  * -----------------------------
@@ -277,6 +284,12 @@ function getBiggestBoxOfficeMovie(movies) {
 
   if(movies.length === 0){
     return errorMsg
+  }
+
+  for(let i = 0; i < movies.length; i++){
+    topBoxOffice = movies[i].boxOffice
+    topBoxOffice.slice(0)
+    console.log(topBoxOffice)
   }
    
 }
