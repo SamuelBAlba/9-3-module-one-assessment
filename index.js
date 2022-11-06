@@ -172,8 +172,9 @@ function findById(movies, id) {
       return movies[i]
     }
 
-    return errorMsg
+    //return errorMsg
   }
+  return errorMsg
    
 }
 // use loop
