@@ -116,10 +116,6 @@ function getAverageIMDBRating(movies) {
   return finalAverage
 }
 
-
-
-
-
 // converts strings to numbers
 // finds average of number (average = (sum of all number) divided by (amount of number).length?
 // answer needs to be in two decimal form 
@@ -135,8 +131,19 @@ function getAverageIMDBRating(movies) {
  *  countByRating(movies);
  *  //> { G: 3, PG: 7 }
  */
-function countByRating() {}
+function countByRating(movies) {
+  let ratingObj = {}
+  numOfRatingG = 0
+  numOfRatingPg = 0
 
+  if(movies.length === 0){
+    return ratingObj
+  }
+
+}
+// use loop for movies
+// keys are rating and value is # of movies with that rating
+// return an object
 /**
  * findById()
  * -----------------------------
@@ -151,8 +158,33 @@ function countByRating() {}
       // Toy Story 4
     };
  */
-function findById() {}
+function findById(movies, id) {
+  let errorMsg = null 
+  let movieName
+   
+  if(movies.length === 0){
+    return errorMsg
+  }
 
+  for(let i = 0; i < movies.length; i++){
+
+    if(movies[i].imdbID !== id){
+      return errorMsg
+    }else{
+      movieName = movies[i].title
+      //console.log(movieName)
+    }
+    
+}
+
+return movieName
+
+}
+
+// use loop
+// two parameters (movies, id)
+// 2 error messages
+// return an object
 /**
  * filterByGenre()
  * -----------------------------
@@ -173,8 +205,37 @@ function findById() {}
  *  filterByGenre(movies, "Horror")
  *  //> []
  */
-function filterByGenre() {}
+function filterByGenre(movies, genre) {
+  let noMovies = []
+  let movieGenre
 
+  if(movies.length === 0){
+    return noMovies
+  }
+
+  for(let i = 0; i < movies.length; i++){
+    
+    movieGenre = movies[i].genre.split(', ')
+
+    if(movieGenre.includes(genre)){
+      noMovies.push(movies[i].title)
+    }
+
+    return noMovies
+    
+  }
+
+
+
+}
+
+
+
+
+// loop movies
+// turn genre into a array to use .includes
+// 2 parameters (movies, genre)
+// return an array of objects
 /**
  * getAllMoviesReleasedAtOrBeforeYear()
  * -----------------------------
@@ -210,8 +271,19 @@ function getAllMoviesReleasedAtOrBeforeYear() {}
  *  getBiggestBoxOfficeMovie(movies);
  *  //> "Incredibles 2"
  */
-function getBiggestBoxOfficeMovie() {}
+function getBiggestBoxOfficeMovie(movies) {
+  let errorMsg = null
+  let topBoxOffice
 
+  if(movies.length === 0){
+    return errorMsg
+  }
+   
+}
+
+
+//
+//return string
 // Do not change anything below this line.
 module.exports = {
   getAllMovieTitles,
